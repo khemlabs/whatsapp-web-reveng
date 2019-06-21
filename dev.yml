@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    restart: on-failure
+    environment:
+      - DEV_MODE=true
+    volumes:
+      - ./:/app
+    ports:
+      - '${PORT_APP_FRONTEND:-2018}:2018'
+      - '${PORT_APP_SERVER:-2019}:2019'
+      - '${PORT_APP_PYTHON:-2020}:2020'
